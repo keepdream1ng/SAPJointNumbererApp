@@ -26,6 +26,8 @@ namespace SAPJointNumberer
         private void SapJointNumberer_Load(object sender, EventArgs e)
         {
             SAP.ConnectToSap();
+            prefix_box.Text = string.Empty;
+            startNum_box.Text = "1";
         }
 
         private void SapJointNumberer_FormClosed(object sender, FormClosedEventArgs e)

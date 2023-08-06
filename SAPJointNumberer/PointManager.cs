@@ -9,7 +9,7 @@ namespace SAPJointNumberer
 {
     public static class PointManager
     {
-        public static string pointPrefix { get; set; } = "point";
+        public static string pointPrefix { get; set; } = string.Empty;
         public static int pointStartNumber { get; set; } = 1;
         public static string[] GetSelectedPointsNames()
         {
