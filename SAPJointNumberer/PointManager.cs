@@ -11,6 +11,13 @@ namespace SAPJointNumberer
     {
         public static string pointPrefix { get; set; } = string.Empty;
         public static int pointStartNumber { get; set; } = 1;
+
+        public static void RenameSelectedPointsByCoordinates()
+        {
+            List<Point> pointList = GetSelectedPointsList();
+            RenamePointInCoordsOrder(pointList);
+        }
+
         public static string[] GetSelectedPointsNames()
         {
             int objNum = 0;
@@ -36,6 +43,21 @@ namespace SAPJointNumberer
                 }
             }
             return pointNames;
+        }
+        public static List<Point> GetSelectedPointsList()
+        {
+            string[] pointNames = GetSelectedPointsNames();
+            if (pointNames is null) { return null; }
+            List<Point> pointList = pointNames.Select(name => new Point(name)).ToList();
+            return pointList;
+        }
+
+        public static void RenamePointInCoordsOrder(List<Point> pointsList)
+        {
+            var result = pointsList.OrderByCoordinates()
+                .Select(p => p.Name)
+                .ToArray();
+            RenamePointsWithNames(result);
         }
 
         public static void RenamePointsWithNames(string[] pointNames)

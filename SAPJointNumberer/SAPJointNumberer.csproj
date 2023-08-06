@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Point.cs" />
+    <Compile Include="OrdererByCoordinates.cs" />
     <Compile Include="SapJointNumberer.cs">
       <SubType>Form</SubType>
     </Compile>
