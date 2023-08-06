@@ -10,6 +10,7 @@ namespace SAPJointNumberer
     public static class PointManager
     {
         public static string pointPrefix { get; set; } = "point";
+        public static int pointStartNumber { get; set; } = 1;
         public static string[] GetSelectedPointsNames()
         {
             int objNum = 0;
@@ -41,17 +42,19 @@ namespace SAPJointNumberer
         {
             if (pointNames is null) { return; }
             int result = 0;
+            int startNum = pointStartNumber;
             for (int i = 0; i < pointNames.Length; i++)
             {
-                result = SAP.Model.PointObj.ChangeName(pointNames[i], $"{pointPrefix}{i}");
+                result = SAP.Model.PointObj.ChangeName(pointNames[i], $"{pointPrefix}{startNum}");
                 if (result != 0)
                 {
                     // Renaming failed probably because same name exists, so we keep renaming with a postfix till it works.
                     int j = 1;
-                    while (SAP.Model.PointObj.ChangeName(pointNames[i], $"{pointPrefix}{i}_{j++}") != 0)
+                    while (SAP.Model.PointObj.ChangeName(pointNames[i], $"{pointPrefix}{startNum}_{j++}") != 0)
                     {
                     }
                 }
+                startNum++;
             }
         }
     }

@@ -32,5 +32,18 @@ namespace SAPJointNumberer
         {
             SAP.CloseConnectionToSap();
         }
+
+        private void prefix_box_TextChanged(object sender, EventArgs e)
+        {
+            PointManager.pointPrefix = prefix_box.Text;
+        }
+
+        private void startNum_box_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(startNum_box.Text,out int statrtNumber))
+            {
+                PointManager.pointStartNumber = statrtNumber;
+            }
+        }
     }
 }
