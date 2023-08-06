@@ -37,17 +37,17 @@
             // 
             // rename_button
             // 
-            this.rename_button.Location = new System.Drawing.Point(256, 27);
+            this.rename_button.Location = new System.Drawing.Point(217, 28);
             this.rename_button.Name = "rename_button";
             this.rename_button.Size = new System.Drawing.Size(75, 23);
             this.rename_button.TabIndex = 0;
-            this.rename_button.Text = "rename";
+            this.rename_button.Text = "numbering";
             this.rename_button.UseVisualStyleBackColor = true;
             this.rename_button.Click += new System.EventHandler(this.rename_button_Click);
             // 
             // startNum_box
             // 
-            this.startNum_box.Location = new System.Drawing.Point(181, 27);
+            this.startNum_box.Location = new System.Drawing.Point(142, 28);
             this.startNum_box.Name = "startNum_box";
             this.startNum_box.Size = new System.Drawing.Size(53, 20);
             this.startNum_box.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // prefix_box
             // 
-            this.prefix_box.Location = new System.Drawing.Point(59, 27);
+            this.prefix_box.Location = new System.Drawing.Point(20, 28);
             this.prefix_box.Name = "prefix_box";
             this.prefix_box.Size = new System.Drawing.Size(100, 20);
             this.prefix_box.TabIndex = 2;
@@ -64,7 +64,7 @@
             // pref_label
             // 
             this.pref_label.AutoSize = true;
-            this.pref_label.Location = new System.Drawing.Point(56, 9);
+            this.pref_label.Location = new System.Drawing.Point(17, 10);
             this.pref_label.Name = "pref_label";
             this.pref_label.Size = new System.Drawing.Size(32, 13);
             this.pref_label.TabIndex = 3;
@@ -73,7 +73,7 @@
             // startNum_label
             // 
             this.startNum_label.AutoSize = true;
-            this.startNum_label.Location = new System.Drawing.Point(181, 9);
+            this.startNum_label.Location = new System.Drawing.Point(142, 10);
             this.startNum_label.Name = "startNum_label";
             this.startNum_label.Size = new System.Drawing.Size(65, 13);
             this.startNum_label.TabIndex = 4;
@@ -81,7 +81,7 @@
             // 
             // SapJointNumberer
             // 
-            this.ClientSize = new System.Drawing.Size(403, 166);
+            this.ClientSize = new System.Drawing.Size(314, 143);
             this.Controls.Add(this.startNum_label);
             this.Controls.Add(this.pref_label);
             this.Controls.Add(this.prefix_box);

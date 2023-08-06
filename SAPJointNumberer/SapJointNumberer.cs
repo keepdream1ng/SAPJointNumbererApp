@@ -21,6 +21,7 @@ namespace SAPJointNumberer
         {
             string[] names = PointManager.GetSelectedPointsNames();
             PointManager.RenamePointsWithNames(names);
+            SapVewManager.RefreshWindow();
         }
 
         private void SapJointNumberer_Load(object sender, EventArgs e)
