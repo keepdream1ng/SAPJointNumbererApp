@@ -113,40 +113,40 @@
             // numbering_label
             // 
             this.numbering_label.AutoSize = true;
-            this.numbering_label.Location = new System.Drawing.Point(68, 69);
+            this.numbering_label.Location = new System.Drawing.Point(30, 68);
             this.numbering_label.Name = "numbering_label";
-            this.numbering_label.Size = new System.Drawing.Size(163, 13);
+            this.numbering_label.Size = new System.Drawing.Size(251, 13);
             this.numbering_label.TabIndex = 7;
-            this.numbering_label.Text = "Numbering priority by coordinates";
+            this.numbering_label.Text = "Coordinates priority value (negative for descending).";
             // 
             // y_bar
             // 
             this.y_bar.LargeChange = 3;
-            this.y_bar.Location = new System.Drawing.Point(96, 150);
+            this.y_bar.Location = new System.Drawing.Point(96, 149);
             this.y_bar.Maximum = 3;
             this.y_bar.Minimum = -3;
             this.y_bar.Name = "y_bar";
             this.y_bar.Size = new System.Drawing.Size(196, 45);
             this.y_bar.TabIndex = 8;
-            this.y_bar.Value = 2;
+            this.y_bar.Value = 1;
             this.y_bar.Scroll += new System.EventHandler(this.y_bar_Scroll);
             // 
             // z_bar
             // 
             this.z_bar.LargeChange = 3;
-            this.z_bar.Location = new System.Drawing.Point(96, 202);
+            this.z_bar.Location = new System.Drawing.Point(96, 201);
             this.z_bar.Maximum = 3;
             this.z_bar.Minimum = -3;
             this.z_bar.Name = "z_bar";
             this.z_bar.Size = new System.Drawing.Size(196, 45);
             this.z_bar.TabIndex = 9;
-            this.z_bar.Value = 1;
+            this.z_bar.Value = 2;
             this.z_bar.Scroll += new System.EventHandler(this.z_bar_Scroll);
             // 
             // y_label
             // 
             this.y_label.AutoSize = true;
-            this.y_label.Location = new System.Drawing.Point(20, 150);
+            this.y_label.Location = new System.Drawing.Point(20, 149);
             this.y_label.Name = "y_label";
             this.y_label.Size = new System.Drawing.Size(14, 13);
             this.y_label.TabIndex = 10;
@@ -155,7 +155,7 @@
             // z_label
             // 
             this.z_label.AutoSize = true;
-            this.z_label.Location = new System.Drawing.Point(20, 202);
+            this.z_label.Location = new System.Drawing.Point(20, 201);
             this.z_label.Name = "z_label";
             this.z_label.Size = new System.Drawing.Size(14, 13);
             this.z_label.TabIndex = 11;
@@ -163,7 +163,7 @@
             // 
             // SapJointNumberer
             // 
-            this.ClientSize = new System.Drawing.Size(315, 252);
+            this.ClientSize = new System.Drawing.Size(315, 258);
             this.Controls.Add(this.z_label);
             this.Controls.Add(this.y_label);
             this.Controls.Add(this.z_bar);
