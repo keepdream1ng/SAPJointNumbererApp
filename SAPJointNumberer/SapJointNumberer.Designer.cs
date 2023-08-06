@@ -33,6 +33,16 @@
             this.prefix_box = new System.Windows.Forms.TextBox();
             this.pref_label = new System.Windows.Forms.Label();
             this.startNum_label = new System.Windows.Forms.Label();
+            this.x_bar = new System.Windows.Forms.TrackBar();
+            this.x_label = new System.Windows.Forms.Label();
+            this.numbering_label = new System.Windows.Forms.Label();
+            this.y_bar = new System.Windows.Forms.TrackBar();
+            this.z_bar = new System.Windows.Forms.TrackBar();
+            this.y_label = new System.Windows.Forms.Label();
+            this.z_label = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.x_bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.y_bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.z_bar)).BeginInit();
             this.SuspendLayout();
             // 
             // rename_button
@@ -79,9 +89,88 @@
             this.startNum_label.TabIndex = 4;
             this.startNum_label.Text = "start number";
             // 
+            // x_bar
+            // 
+            this.x_bar.LargeChange = 3;
+            this.x_bar.Location = new System.Drawing.Point(96, 98);
+            this.x_bar.Maximum = 3;
+            this.x_bar.Minimum = -3;
+            this.x_bar.Name = "x_bar";
+            this.x_bar.Size = new System.Drawing.Size(196, 45);
+            this.x_bar.TabIndex = 5;
+            this.x_bar.Value = 3;
+            this.x_bar.Scroll += new System.EventHandler(this.x_bar_Scroll);
+            // 
+            // x_label
+            // 
+            this.x_label.AutoSize = true;
+            this.x_label.Location = new System.Drawing.Point(20, 98);
+            this.x_label.Name = "x_label";
+            this.x_label.Size = new System.Drawing.Size(14, 13);
+            this.x_label.TabIndex = 6;
+            this.x_label.Text = "X";
+            // 
+            // numbering_label
+            // 
+            this.numbering_label.AutoSize = true;
+            this.numbering_label.Location = new System.Drawing.Point(68, 69);
+            this.numbering_label.Name = "numbering_label";
+            this.numbering_label.Size = new System.Drawing.Size(163, 13);
+            this.numbering_label.TabIndex = 7;
+            this.numbering_label.Text = "Numbering priority by coordinates";
+            // 
+            // y_bar
+            // 
+            this.y_bar.LargeChange = 3;
+            this.y_bar.Location = new System.Drawing.Point(96, 150);
+            this.y_bar.Maximum = 3;
+            this.y_bar.Minimum = -3;
+            this.y_bar.Name = "y_bar";
+            this.y_bar.Size = new System.Drawing.Size(196, 45);
+            this.y_bar.TabIndex = 8;
+            this.y_bar.Value = 2;
+            this.y_bar.Scroll += new System.EventHandler(this.y_bar_Scroll);
+            // 
+            // z_bar
+            // 
+            this.z_bar.LargeChange = 3;
+            this.z_bar.Location = new System.Drawing.Point(96, 202);
+            this.z_bar.Maximum = 3;
+            this.z_bar.Minimum = -3;
+            this.z_bar.Name = "z_bar";
+            this.z_bar.Size = new System.Drawing.Size(196, 45);
+            this.z_bar.TabIndex = 9;
+            this.z_bar.Value = 1;
+            this.z_bar.Scroll += new System.EventHandler(this.z_bar_Scroll);
+            // 
+            // y_label
+            // 
+            this.y_label.AutoSize = true;
+            this.y_label.Location = new System.Drawing.Point(20, 150);
+            this.y_label.Name = "y_label";
+            this.y_label.Size = new System.Drawing.Size(14, 13);
+            this.y_label.TabIndex = 10;
+            this.y_label.Text = "Y";
+            // 
+            // z_label
+            // 
+            this.z_label.AutoSize = true;
+            this.z_label.Location = new System.Drawing.Point(20, 202);
+            this.z_label.Name = "z_label";
+            this.z_label.Size = new System.Drawing.Size(14, 13);
+            this.z_label.TabIndex = 11;
+            this.z_label.Text = "Z";
+            // 
             // SapJointNumberer
             // 
-            this.ClientSize = new System.Drawing.Size(314, 143);
+            this.ClientSize = new System.Drawing.Size(315, 252);
+            this.Controls.Add(this.z_label);
+            this.Controls.Add(this.y_label);
+            this.Controls.Add(this.z_bar);
+            this.Controls.Add(this.y_bar);
+            this.Controls.Add(this.numbering_label);
+            this.Controls.Add(this.x_label);
+            this.Controls.Add(this.x_bar);
             this.Controls.Add(this.startNum_label);
             this.Controls.Add(this.pref_label);
             this.Controls.Add(this.prefix_box);
@@ -91,6 +180,9 @@
             this.Text = "Sap Joints Numberer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SapJointNumberer_FormClosed);
             this.Load += new System.EventHandler(this.SapJointNumberer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.x_bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.y_bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.z_bar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,6 +194,13 @@
         private System.Windows.Forms.TextBox prefix_box;
         private System.Windows.Forms.Label pref_label;
         private System.Windows.Forms.Label startNum_label;
+        private System.Windows.Forms.TrackBar x_bar;
+        private System.Windows.Forms.Label x_label;
+        private System.Windows.Forms.Label numbering_label;
+        private System.Windows.Forms.TrackBar y_bar;
+        private System.Windows.Forms.TrackBar z_bar;
+        private System.Windows.Forms.Label y_label;
+        private System.Windows.Forms.Label z_label;
     }
 }
 

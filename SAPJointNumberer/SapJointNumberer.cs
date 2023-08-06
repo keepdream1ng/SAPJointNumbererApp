@@ -29,6 +29,9 @@ namespace SAPJointNumberer
             SAP.ConnectToSap();
             prefix_box.Text = string.Empty;
             startNum_box.Text = "1";
+            x_label.Text = $"Order by X: {x_bar.Value.ToString()}";
+            y_label.Text = $"Order by Y: {y_bar.Value.ToString()}";
+            z_label.Text = $"Order by Z: {z_bar.Value.ToString()}";
         }
 
         private void SapJointNumberer_FormClosed(object sender, FormClosedEventArgs e)
@@ -47,6 +50,21 @@ namespace SAPJointNumberer
             {
                 PointManager.pointStartNumber = statrtNumber;
             }
+        }
+
+        private void x_bar_Scroll(object sender, EventArgs e)
+        {
+            x_label.Text = $"Order by X: {x_bar.Value.ToString()}";
+        }
+
+        private void y_bar_Scroll(object sender, EventArgs e)
+        {
+            y_label.Text = $"Order by Y: {y_bar.Value.ToString()}";
+        }
+
+        private void z_bar_Scroll(object sender, EventArgs e)
+        {
+            z_label.Text = $"Order by Z: {z_bar.Value.ToString()}";
         }
     }
 }
