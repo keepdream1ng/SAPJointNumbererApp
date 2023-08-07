@@ -65,16 +65,28 @@ namespace SAPJointNumberer
             if (pointNames is null) { return; }
             int result = 0;
             int startNum = pointStartNumber;
+            // Check for same names as needed in the selection, to avoid overlaping.
+            string[] overlapingNames = pointNames.Select((str, index) => $"{pointPrefix}{index}").Intersect(pointNames).ToArray();
+            if (overlapingNames.Length > 0)
+            {
+                string tempName;
+                foreach (string name in overlapingNames)
+                {
+                    // Giving temporary name to the overlaping points.
+                    tempName = Guid.NewGuid().ToString();
+                    SAP.Model.PointObj.ChangeName(name, tempName);
+                    pointNames[Array.IndexOf(pointNames, name)] = tempName;
+                }
+            }
+
             for (int i = 0; i < pointNames.Length; i++)
             {
                 result = SAP.Model.PointObj.ChangeName(pointNames[i], $"{pointPrefix}{startNum}");
                 if (result != 0)
                 {
-                    // Renaming failed probably because same name exists, so we keep renaming with a postfix till it works.
+                    // Renaming failed probably because same name exists outside of selection, so we keep renaming with a postfix till it works.
                     int j = 1;
-                    while (SAP.Model.PointObj.ChangeName(pointNames[i], $"{pointPrefix}{startNum}_{j++}") != 0)
-                    {
-                    }
+                    while (SAP.Model.PointObj.ChangeName(pointNames[i], $"{pointPrefix}{startNum}_{j++}") != 0) { }
                 }
                 startNum++;
             }
