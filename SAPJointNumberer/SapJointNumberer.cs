@@ -19,8 +19,6 @@ namespace SAPJointNumberer
 
         private void rename_button_Click(object sender, EventArgs e)
         {
-            //string[] names = PointManager.GetSelectedPointsNames();
-            //PointManager.RenamePointsWithNames(names);
             PointManager.RenameSelectedPointsByCoordinates();
             SapVewManager.RefreshWindow();
         }

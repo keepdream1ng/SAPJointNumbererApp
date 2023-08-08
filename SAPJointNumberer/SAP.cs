@@ -46,7 +46,6 @@ namespace SAPJointNumberer
         public static void CloseConnectionToSap()
         {
             //close SAP2000
-            //mySapObject.ApplicationExit(false);
 
             myHelper = null;
             Model = null;

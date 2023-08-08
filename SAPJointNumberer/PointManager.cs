@@ -18,7 +18,7 @@ namespace SAPJointNumberer
             RenamePointInCoordsOrder(pointList);
         }
 
-        public static string[] GetSelectedPointsNames()
+        private static string[] GetSelectedPointsNames()
         {
             int objNum = 0;
             int[] objectTypes = null;
@@ -44,7 +44,7 @@ namespace SAPJointNumberer
             }
             return pointNames;
         }
-        public static List<Point> GetSelectedPointsList()
+        private static List<Point> GetSelectedPointsList()
         {
             string[] pointNames = GetSelectedPointsNames();
             if (pointNames is null) { return null; }
@@ -52,7 +52,7 @@ namespace SAPJointNumberer
             return pointList;
         }
 
-        public static void RenamePointInCoordsOrder(List<Point> pointsList)
+        private static void RenamePointInCoordsOrder(List<Point> pointsList)
         {
             var result = pointsList.OrderByCoordinates()
                 .Select(p => p.Name)
@@ -60,7 +60,7 @@ namespace SAPJointNumberer
             RenamePointsWithNames(result);
         }
 
-        public static void RenamePointsWithNames(string[] pointNames)
+        private static void RenamePointsWithNames(string[] pointNames)
         {
             if (pointNames is null) { return; }
             int result = 0;
@@ -78,7 +78,7 @@ namespace SAPJointNumberer
                     pointNames[Array.IndexOf(pointNames, name)] = tempName;
                 }
             }
-
+            // Now numbering.
             for (int i = 0; i < pointNames.Length; i++)
             {
                 result = SAP.Model.PointObj.ChangeName(pointNames[i], $"{pointPrefix}{startNum}");

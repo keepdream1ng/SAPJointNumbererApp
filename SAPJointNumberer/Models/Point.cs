@@ -34,17 +34,5 @@ namespace SAPJointNumberer
                 Z = zCoords;
             }
         }
-
-        public bool RenameTo(string newName)
-        {
-            if (SAP.Model.PointObj.ChangeName(Name, newName) == 0)
-            {
-                Name = newName;
-                return true;
-            } else
-            {
-                return false;
-            }
-        }
     }
 }
